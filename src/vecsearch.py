@@ -35,8 +35,8 @@ def tokenize(query, vocab, doc_embed):
 
     for q in query.split():
         if q and q[-1]=='*':
-            if len(p)>2 and p[:2]=='n:':
-                prefix+=[tg+p[1:] for tg in 'plo']
+            if len(q)>2 and q[:2]=='n:':
+                prefix+=[tg+q[1:] for tg in 'plo']
             else: prefix.append(q.lower())
 
         elif len(q)>=2 and q[1]==':':
