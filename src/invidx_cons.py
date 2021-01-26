@@ -91,7 +91,7 @@ def extracter(file):
     f=bs4.BeautifulSoup(data,'lxml')
     d ={}
     for doc in f.find_all('doc'):
-        if doc.find('text').text is not '\n':
+        if doc.find('text').text != '\n':
             d[doc.docno.text.strip()]=doc.find_all('text')
     return d
 
