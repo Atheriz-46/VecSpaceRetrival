@@ -141,7 +141,7 @@ if __name__=='__main__':
     nargs={}
     for i in range(1,len(sys.argv),2):
         nargs[sys.argv[i]]=sys.argv[i+1]
-    nargs['--cutoff']=nargs.get('--cutoff',10)
+    nargs['--cutoff']=nargs.get('--cutoff','10')
     
-    retrive_qrels(nargs['--query'],nargs['--dict'], nargs['--index'], nargs['--output'],nargs['--cutoff'])
+    retrive_qrels(nargs['--query'],nargs['--dict'], nargs['--index'], nargs['--output'],int(nargs['--cutoff']))
 
